@@ -3,8 +3,11 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+  # Called Actions
+  # @ creates Instances of the variable, renders in views
   def index
     @posts = Post.all
+    render template: "posts/index.html.erb", layout: "application"
   end
 
   # GET /posts/1
@@ -69,6 +72,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title)
+      params.require(:post).permit(:title, :body)
     end
 end
