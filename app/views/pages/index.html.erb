@@ -1,0 +1,12 @@
+<h1>Blog Pages</h1>
+
+<!-- First change
+<% @pages.each do |page| %>
+    <p><%= page.title %></p>
+<% end %>
+-->
+
+<% @pages.each do |page| %>
+    <p><%= link_to page.title, page %></p>
+<% end %>
+<%= link_to 'New Page', new_page_path %>
