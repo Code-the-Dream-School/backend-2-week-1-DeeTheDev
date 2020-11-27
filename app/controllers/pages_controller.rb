@@ -33,6 +33,12 @@ class PagesController < ApplicationController
         redirect_to @page
     end
 
+    def destroy
+        @page = Page.find(params[:id])
+        @page.destroy
+        redirect_to pages_path
+    end
+
     # Private allows no one else to access this code
     private
 
